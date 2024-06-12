@@ -36,13 +36,13 @@ function App() {
 
     const [pokemonIndex, setPokemonIndex] = useState(0);
 
-    const prevPokemon = () => {
-      setPokemonIndex((prevIndex) => (prevIndex === 0 ? pokemonList.length - 1 : prevIndex - 1));
-    }
+    // const prevPokemon = () => {
+    //   setPokemonIndex((prevIndex) => (prevIndex === 0 ? pokemonList.length - 1 : prevIndex - 1));
+    // }
     
-    const nextPokemon = () => {
-      setPokemonIndex((prevIndex) => (prevIndex === pokemonList.length - 1 ? 0 : prevIndex + 1));
-    };
+    // const nextPokemon = () => {
+    //   setPokemonIndex((prevIndex) => (prevIndex === pokemonList.length - 1 ? 0 : prevIndex + 1));
+    // };
 
 
   return (
@@ -50,14 +50,19 @@ function App() {
       <div>
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       <NavBar 
+      pokemonList={pokemonList}
+      setPokemonIndex={setPokemonIndex}
+      />
+      {/* <NavBar 
       prevPokemon={prevPokemon} 
       nextPokemon={nextPokemon}
-      />
+      /> */}
       </div>
       
     </>
   )
 }
+
 
 
 
